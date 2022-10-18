@@ -103,4 +103,8 @@ label{
     border-radius: 50%;
     margin-left: 12px;
 }
+.label text{
+display: flex;
+flex-direction: row;
+}
 *{box-sizing: border-box;}
