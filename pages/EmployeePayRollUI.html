@@ -19,11 +19,11 @@
             </div>
         </header>
         <div class="form-content">
-            <form class="form" action="#" onsubmit="save(); return false">
+            <form class="form" action="#" onsubmit="save(); return false" onreset="resetForm()">
                 <div class="form-head">
                     Employee Payroll Form
                 </div>
-                <div class="row-content">
+                <div class="row-content">   
                     <label class="label text" for="name">Name</label>
                     <input class="input" type="text" id="name" name="name" placeholder="Your name.." required>
                 </div>
@@ -75,7 +75,7 @@
                     <div class="row-content">
                         <label class="label text" for="salary">Choose your salary: </label>
                         <input class="input" type="range" name="salary" id="salary" min="300000" max="500000" step="100" value="400000">
-                        <output class="salary-output-text" for="salary">400000</output>
+                        <output class="salary-output" for="salary">400000</output>
                     </div>
                     <div class="row-content">
                         <label class="label text" for="startDate">Start Date </label>
@@ -156,5 +156,14 @@
                   </div>
             </form>  
         </div>
+        <script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+                const salary = document.querySelector('#salary');
+                 const output = document.querySelector('.salary-output');
+                output.textContent = salary.value;
+               salary.addEventListener('input', function () {
+                output.textContent = salary.value;
+               });})
+        </script>
     </body>
 </html>
